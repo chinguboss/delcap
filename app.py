@@ -31,16 +31,5 @@ def handle_menu():
     return jsonify(response)  # JSON 응답 반환
 
 
-@app.errorhandler(400)
-def bad_request(error):
-    return jsonify({"error": "잘못된 요청"}), 400
-
-@app.route('/menu', methods=['POST'])
-def handle_menu():
-    data = request.json
-    print("Received data:", data)  # 요청 데이터 출력
-    # 나머지 코드...
-    print("Response:", response)  # 응답 데이터 출력
-
 if __name__ == '__main__':
     app.run()  # 로컬 서버 실행host='0.0.0.0', port=5000
